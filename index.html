@@ -1,10 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesPC.css">
     <head>
-        <title></title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Projet Reservia</title>
+        <script src="https://kit.fontawesome.com/aa3eca191a.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>un super titre !</h1>
+        <header class="entete">
+            <img class="logo" src="images/logo/Reservia.svg" alt="logo du site">
+            <nav>
+                <ul class="navigateur">
+                    <li class="top_lign"><a href="page2.html" target="_blank">Hébergements</a></li>
+                    <li class="top_lign"><a href="page2.html" target="_blank">Activités</a></li>
+                    <li class="inscription">S'inscrire</li>
+                </ul>
+            </nav>
+        </header>
+     <div class="recherche">
+        <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
+        <p>en plein centre ville ou en pleine nature</p>
+        <i class="fas fa-map-marker-alt"></i>
+        <form action="page.php" method="POST">
+            <input type="text" name="recherche" placeholder="lieu / prix / ambiance ..."/>
+            <input value="rechercher" name="recherche" type="submit" />
+        </form>
+        <form>
+
+        </form>
+        <p>plus de 500 logements sont disponibles dans cette ville</p>
+     </div>
+        <h1>Hébergements à Marseille</h1>
     </body>
 </html>

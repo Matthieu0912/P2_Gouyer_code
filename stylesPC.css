@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap');
+*{
+    font-family: "raleway", "sans-serif";
+}
+.entete{
+    display: flex;
+    justify-content: space-between;
+    border: red 1px solid;
+}
+li{
+    list-style-type: none;
+    padding: 2em;
+    
+}
+.navigateur{
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+.top_lign :hover{
+    border-top: 3px solid #0065fc;
+}
+.logo{
+    padding: 0 2em 0 2em;
+}
+.inscription{
+    color: #0065fc;
+    font-weight: bold;
+}
+.recherche{
+    border: solid red 1px;
+    padding: 1em 2em;
+}
