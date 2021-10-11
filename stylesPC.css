@@ -3,7 +3,7 @@
   font-family: "raleway", "sans-serif";
 }
 body {
-  padding: 5px;
+  padding: 10px;
 }
 nav {
   display: flex;
@@ -22,8 +22,6 @@ a {
   color: inherit;
   text-decoration: none;
 }
-.sous_nav {
-}
 @media (max-width: 800px) {
   order: 1;
   flex-basis: 100%;
@@ -35,6 +33,9 @@ a {
 .inscription {
   font-weight: bold;
   color: #0065fc;
+}
+.recherche p {
+  margin-top: 0;
 }
 .bouton {
   border-top-right-radius: 10px;
@@ -52,8 +53,27 @@ a {
 .search {
   display: flex;
 }
-.filtre {
+.filtres {
+  margin: 2rem 0 2rem 0;
+}
+.filtres i {
   color: #0065fc;
+  background-color: #deebff;
+  padding: 1rem;
+  border-radius: 50%;
+  margin: -3px;
+}
+.deco_filtre {
+  border: rgb(224, 229, 234) 2.5px solid;
+  padding-right: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-radius: 25px;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+.info {
+  margin-bottom: 2rem;
 }
 .info i {
   color: white;
@@ -61,110 +81,29 @@ a {
   border-radius: 50%;
 }
 #hebergements {
-  background-color: gainsboro;
+  background-color: #f2f2f2;
   width: 65%;
   border-radius: 20px;
+  padding: 20px;
 }
 #conteneur {
   display: flex;
   flex-wrap: wrap;
   border: red solid 1px;
+  gap: 2rem;
 }
-.auberge {
+.card {
   border: solid red 1px;
   background-color: ghostwhite;
-  width: 15em;
-  height: 11em;
+  width: 15rem;
   border-radius: 20px;
   padding: 3px;
-  margin: 0 1.2em 1.2em 1.2em;
 }
-.hotel_du_port {
-  border: solid red 1px;
-  background-color: ghostwhite;
-  width: 14em;
-  height: 10em;
-  border-radius: 20px;
-  padding: 2px;
-  margin: 0 2em 2em 2em;
-}
-.mouettes {
-  border: solid red 1px;
-  background-color: ghostwhite;
-  width: 14em;
-  height: 10em;
-  border-radius: 20px;
-  padding: 2px;
-  margin: 0 2em 2em 2em;
-}
-.hotel_de_la_mer {
-  border: solid red 1px;
-  background-color: ghostwhite;
-  width: 14em;
-  height: 10em;
-  border-radius: 20px;
-  padding: 2px;
-  margin: 0 2em 2em 2em;
-}
-.le_panier {
-  border: solid red 1px;
-  background-color: ghostwhite;
-  width: 14em;
-  height: 10em;
-  border-radius: 20px;
-  padding: 2px;
-  margin: 0 2em 2em 2em;
-}
-.amina {
-  border: solid red 1px;
-  background-color: ghostwhite;
-  width: 14em;
-  height: 10em;
-  border-radius: 20px;
-  padding: 2px;
-  margin: 0 2em 2em 2em;
-}
-.auberge img {
+.card img {
   width: 100%;
-  height: 70%;
+  height: 10rem;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-}
-.hotel_du_port img {
-  width: 100%;
-  height: 70%;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-.mouettes img {
-  width: 100%;
-  height: 70%;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-.hotel_de_la_mer img {
-  width: 100%;
-  height: 70%;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-.le_panier img {
-  width: 100%;
-  height: 70%;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-.amina img {
-  width: 100%;
-  height: 70%;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-.filtres i {
-  color: #0065fc;
-  background-color: #deebff;
-  padding: 0.8rem;
-  border-radius: 50%;
 }
 .recherche i {
   display: flex;
@@ -179,31 +118,8 @@ a {
 .recherche h5 {
   font-size: 1rem;
 }
-.filter_design {
-  border: rgba(215, 220, 230, 0.8);
-}
-.auberge i {
+.card i {
   color: #0065fc;
-}
-.hotel_du_port i {
-  color: #0065fc;
-}
-.mouettes i {
-  color: #0065fc;
-}
-.hotel_de_la_mer i {
-  color: #0065fc;
-}
-.le_panier i {
-  color: #0065fc;
-}
-.amina i {
-  color: #0065fc;
-}
-.deco_filtre {
-  border: solid 1px maroon;
-  border-radius: 20px;
-  padding-left: 1em;
 }
 .le_matin {
   border: solid red 1px;
@@ -246,7 +162,11 @@ a {
 }
 #conteneur_pop {
   width: 30%;
+  border: solid red 1px;
 }
 #global {
   display: flex;
+}
+#hebergement p {
+  margin-block-end: 0;
 }
