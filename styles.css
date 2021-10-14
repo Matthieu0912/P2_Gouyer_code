@@ -134,6 +134,7 @@ nav a:hover {
   padding-right: 0.5rem;
   display: inline-block;
   cursor: pointer;
+  margin-bottom: 0.5rem;
 }
 
 .deco_filtre:hover {
@@ -197,11 +198,6 @@ nav a:hover {
   gap: 1.3rem;
 }
 
-@media (max-width: 1200px) {
-  .appartments_list .populaire_flex {
-    flex-direction: row;
-  }
-}
 /*CARTES*/
 .carte {
   background-color: white;
@@ -246,8 +242,8 @@ nav a:hover {
 
 .carte_populaire img {
   border-radius: 1rem 0 0 1rem;
-  max-height: 10rem;
-  width: 10rem;
+  height: 10rem;
+  width: 100%;
   padding: 0.4rem;
   object-fit: cover;
   object-position: center;
@@ -267,113 +263,118 @@ nav a:hover {
 
 /*ACTIVITEES*/
 .activites {
-  height: 40rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: 23% 23% 23% 23%;
+  grid-gap: 2rem;
+  grid-template-rows: repeat(7, 4rem);
   margin-bottom: 3rem;
-  padding-left: 1.2rem;
 }
 .activites h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 1rem;
+  margin: 0.5rem 0 0 2rem;
 }
 .big_port {
-  border-radius: 1rem;
-  width: 23%;
-  height: 40rem;
   box-shadow: 0 0 16px #0000002e;
+  border-radius: 1rem;
+  grid-column: 1;
+  grid-row-start: 1;
+  grid-row-end: 8;
 }
-
 .big_port img {
+  border-radius: 1rem 1rem 0 0;
   width: 100%;
   height: 92%;
-  border-radius: 1rem 1rem 0 0;
   object-fit: cover;
   object-position: center;
 }
-
 .medium_fort {
-  border-radius: 1rem;
-  width: 100%;
-  height: 22rem;
   box-shadow: 0 0 16px #0000002e;
+  border-radius: 1rem;
+  grid-column: 2;
+  grid-row: 1/5;
 }
 .medium_fort img {
-  width: 100%;
-  height: 85%;
   border-radius: 1rem 1rem 0 0;
+  width: 100%;
+  height: 86%;
   object-fit: cover;
   object-position: center;
 }
-
 .small_frioul {
-  height: 16rem;
-  width: 100%;
-  border-radius: 1rem;
-  object-fit: cover;
-  object-position: center;
   box-shadow: 0 0 16px #0000002e;
+  border-radius: 1rem;
+  grid-column: 2;
+  grid-row: 5/8;
 }
 .small_frioul img {
-  width: 100%;
-  height: 85%;
   border-radius: 1rem 1rem 0 0;
+  width: 100%;
+  height: 82%;
   object-fit: cover;
   object-position: center;
 }
-.placement {
-  display: flex;
-  flex-direction: column;
-  width: 23%;
-  gap: 2rem;
-}
-.big_calanque {
-  border-radius: 1rem;
-  width: 23%;
-  height: 40rem;
+.big_calanques {
   box-shadow: 0 0 16px #0000002e;
+  border-radius: 1rem;
+  grid-column: 3;
+  grid-row: 1/8;
 }
-.big_calanque img {
+.big_calanques img {
+  border-radius: 1rem 1rem 0 0;
   width: 100%;
   height: 92%;
-  border-radius: 1rem 1rem 0 0;
   object-fit: cover;
   object-position: center;
 }
 .small_nd {
-  height: 16rem;
-  width: 100%;
-  border-radius: 1rem;
-  object-fit: cover;
-  object-position: center;
   box-shadow: 0 0 16px #0000002e;
+  border-radius: 1rem;
+  grid-column: 4;
+  grid-row: 1/4;
 }
 .small_nd img {
-  width: 100%;
-  height: 85%;
   border-radius: 1rem 1rem 0 0;
+  width: 100%;
+  height: 82%;
   object-fit: cover;
   object-position: center;
 }
 .medium_longchamp {
-  border-radius: 1rem;
-  width: 100%;
-  height: 22rem;
   box-shadow: 0 0 16px #0000002e;
+  border-radius: 1rem;
+  grid-column: 4;
+  grid-row: 4/8;
 }
 .medium_longchamp img {
-  width: 100%;
-  height: 85%;
   border-radius: 1rem 1rem 0 0;
+  width: 100%;
+  height: 86%;
   object-fit: cover;
   object-position: center;
 }
 
+@media (max-width: 1500px) {
+  .activites > div {
+    grid-column: span 2;
+    grid-row: span 3;
+    min-width: 10rem;
+  }
+  .activites img {
+    height: 80%;
+  }
+}
+
 @media (max-width: 800px) {
   .activites > div {
-    width: 100%;
+    margin-left: 3rem;
+    grid-column: span 3;
+    grid-row: span 3;
+  }
+  .activites h3 {
+    text-align: center;
+    margin: 0;
+  }
+  .acti {
+    text-align: center;
   }
 }
 
@@ -381,21 +382,18 @@ nav a:hover {
 .footer {
   background-color: rgba(235, 237, 239, 0.8);
   display: flex;
-  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
   padding: 1rem;
-}
-.foot {
-  display: flex;
-  flex-direction: column;
-  margin-left: 1rem;
-  margin-right: 15rem;
+  width: 100%;
 }
 .foot p {
   margin-top: 0.2rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 500px) {
   .footer {
+    display: flex;
     flex-direction: column;
-    margin: 1rem 0;
+    margin-bottom: 1rem;
   }
 }
