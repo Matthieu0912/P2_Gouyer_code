@@ -9,6 +9,7 @@
   --gris: #f2f2f2;
   --ciel: #deebff;
   --bleufiltre: #f3f8ff;
+  --grey_star: #cacbbc;
 }
 
 a {
@@ -34,10 +35,10 @@ nav a {
 
 .inscription {
   font-weight: bold;
-  color: #0065fc;
+  color: var(--blue);
 }
 nav a:hover {
-  border-top: 3px solid #0065fc;
+  border-top: 3px solid var(--blue);
 }
 
 .sub-nav {
@@ -51,16 +52,17 @@ nav a:hover {
   .sub-nav a {
     flex-basis: 50%;
     text-align: center;
-    border-bottom: 3px solid #deebff;
+    border-bottom: 3px solid var(--ciel);
   }
   .sub-nav a:hover {
-    border-bottom: 3px solid #0065fc;
+    border-bottom: 3px solid var(--blue);
     border-top: 3px solid transparent;
   }
 }
 /* BARRE DE RECHERCHE */
 .wrapper {
   padding: 0 2rem;
+  margin-bottom: 2rem;
 }
 .wrapper h1 {
   margin-bottom: 0.7rem;
@@ -77,17 +79,17 @@ nav a:hover {
   font-size: 1.2rem;
 }
 .recherche i {
-  background-color: #f2f2f2;
+  background-color: var(--gris);
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
 }
 .recherche input {
   flex-basis: 16rem;
-  border: 1px solid #f2f2f2;
+  border: 1px solid var(--gris);
   overflow: auto;
 }
 .recherche button {
-  background-color: #0065fc;
+  background-color: var(--blue);
   color: white;
   font-weight: bold;
   border-radius: 0 1rem 1rem 0;
@@ -115,9 +117,10 @@ nav a:hover {
 }
 /*FILTRES*/
 
-.lste_filtres {
+.liste_filtres {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 1rem;
 }
 
 .filtres i {
@@ -134,7 +137,7 @@ nav a:hover {
   padding-right: 0.5rem;
   display: inline-block;
   cursor: pointer;
-  margin-bottom: 0.5rem;
+  margin: 0 0.5rem 0 0;
 }
 
 .deco_filtre:hover {
@@ -143,11 +146,11 @@ nav a:hover {
 }
 
 .info {
-  margin-bottom: 2rem;
+  margin: 0 1rem 2rem 1rem;
 }
 .info i {
   color: white;
-  background-color: #0065fc;
+  background-color: var(--blue);
   border-radius: 50%;
 }
 /*HEBERGEMENT*/
@@ -174,9 +177,12 @@ nav a:hover {
   flex-basis: 33%;
 }
 
-@media (max-width: 910px) {
+@media (max-width: 950px) {
   .appartments_list {
     flex-direction: column-reverse;
+  }
+  .carte_populaire img {
+    height: 7rem;
   }
 }
 
@@ -190,14 +196,6 @@ nav a:hover {
   margin-bottom: 1rem;
 }
 
-/*POPULAIRE*/
-.appartments_list .populaire_flex {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 1.3rem;
-}
-
 /*CARTES*/
 .carte {
   background-color: white;
@@ -207,6 +205,10 @@ nav a:hover {
   flex-grow: 1;
   min-width: 15rem;
   flex-basis: 30%;
+}
+
+.carte:hover {
+  transform: scale(1.02);
 }
 
 .carte img {
@@ -225,14 +227,38 @@ nav a:hover {
 .carte i {
   color: var(--blue);
 }
+.carte i.grey,
+.carte_populaire i.grey {
+  color: var(--grey_star);
+}
+
+/*POPULAIRE FLEX*/
+.appartments_list .populaire_flex {
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1.3rem;
+}
 
 /*POPULAIRE*/
+.populaire {
+  display: flex;
+  flex-direction: column;
+}
 .carte_populaire {
   display: flex;
   background-color: white;
   border-radius: 1rem;
   box-shadow: 0 0 16px #0000002e;
   height: 28%;
+  min-width: 15rem;
+  max-height: 10rem;
+}
+
+.populaire_flex > *:hover {
+  transform: scale(1.02);
 }
 
 .carte_populaire i {
@@ -242,18 +268,20 @@ nav a:hover {
 
 .carte_populaire img {
   border-radius: 1rem 0 0 1rem;
-  height: 10rem;
-  width: 100%;
+  width: 40%;
   padding: 0.4rem;
   object-fit: cover;
   object-position: center;
 }
 .description_card {
-  flex-basis: 100%;
   display: flex;
   flex-direction: column;
+  flex-basis: 100%;
 }
-
+.description_card .description__stars {
+  margin-top: auto;
+  margin-bottom: 0.7rem;
+}
 .titre_pop {
   display: flex;
   flex-direction: row;
@@ -264,9 +292,8 @@ nav a:hover {
 /*ACTIVITEES*/
 .activites {
   display: grid;
-  grid-template-columns: 23% 23% 23% 23%;
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
-  grid-template-rows: repeat(7, 4rem);
   margin-bottom: 3rem;
 }
 .activites h3 {
@@ -354,9 +381,10 @@ nav a:hover {
 
 @media (max-width: 1500px) {
   .activites > div {
+    grid-column: 2/4;
     grid-column: span 2;
     grid-row: span 3;
-    min-width: 10rem;
+    max-height: 15rem;
   }
   .activites img {
     height: 80%;
@@ -365,16 +393,14 @@ nav a:hover {
 
 @media (max-width: 800px) {
   .activites > div {
-    margin-left: 3rem;
-    grid-column: span 3;
+    grid-column: 1/5;
     grid-row: span 3;
   }
   .activites h3 {
-    text-align: center;
-    margin: 0;
+    margin-left: 1rem;
   }
   .acti {
-    text-align: center;
+    margin-left: 1rem;
   }
 }
 
