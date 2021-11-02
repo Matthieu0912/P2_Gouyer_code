@@ -5,6 +5,7 @@
 }
 
 :root {
+  scroll-behavior: smooth;
   --blue: #0065fc;
   --gris: #f2f2f2;
   --ciel: #deebff;
@@ -121,6 +122,8 @@ nav a:hover {
   display: flex;
   flex-wrap: wrap;
   margin: 0 1rem;
+  align-items: center;
+  gap: 1rem;
 }
 
 .filtres i {
@@ -165,11 +168,11 @@ nav a:hover {
   border-radius: 1.2rem;
 }
 
-.appartments_list .city {
+.appartments_list #city {
   flex-basis: 66%;
 }
 
-.appartments_list .city a {
+.appartments_list #city a {
   font-weight: bold;
 }
 
@@ -296,6 +299,9 @@ nav a:hover {
   grid-gap: 2rem;
   margin-bottom: 3rem;
 }
+.activites img {
+  max-height: 76vh;
+}
 .activites h3 {
   margin: 0.5rem 0 0 2rem;
 }
@@ -309,7 +315,7 @@ nav a:hover {
 .big_port img {
   border-radius: 1rem 1rem 0 0;
   width: 100%;
-  height: 92%;
+  height: 93%;
   object-fit: cover;
   object-position: center;
 }
@@ -322,9 +328,10 @@ nav a:hover {
 .medium_fort img {
   border-radius: 1rem 1rem 0 0;
   width: 100%;
-  height: 86%;
+  height: 87%;
   object-fit: cover;
   object-position: center;
+  max-height: 35vh;
 }
 .small_frioul {
   box-shadow: 0 0 16px #0000002e;
@@ -335,7 +342,7 @@ nav a:hover {
 .small_frioul img {
   border-radius: 1rem 1rem 0 0;
   width: 100%;
-  height: 82%;
+  height: 85%;
   object-fit: cover;
   object-position: center;
 }
@@ -348,7 +355,7 @@ nav a:hover {
 .big_calanques img {
   border-radius: 1rem 1rem 0 0;
   width: 100%;
-  height: 92%;
+  height: 93%;
   object-fit: cover;
   object-position: center;
 }
@@ -361,7 +368,7 @@ nav a:hover {
 .small_nd img {
   border-radius: 1rem 1rem 0 0;
   width: 100%;
-  height: 82%;
+  height: 85%;
   object-fit: cover;
   object-position: center;
 }
@@ -399,7 +406,7 @@ nav a:hover {
   .activites h3 {
     margin-left: 1rem;
   }
-  .acti {
+  #acti {
     margin-left: 1rem;
   }
 }
